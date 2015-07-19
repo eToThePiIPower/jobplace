@@ -1,0 +1,9 @@
+<template name="orgs">
+  <h3>Organizations</h3>
+  {{#each orgs}}
+    <div class="col-md-4">
+      <h4><a href="/orgs/{{_id}}">{{name}}</a></h4>
+      {{location}}
+    </div>
+  {{/each}}
+</template>

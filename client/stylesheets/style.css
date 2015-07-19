@@ -7,6 +7,11 @@
     background-size: cover;
     overflow: hidden;
     color: #fff;
+    padding: 5em;
+}
+
+.jumbotron h1 {
+	font-size: 70px;
 }
 
 .featured h2 {

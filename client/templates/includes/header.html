@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="/">Sprout</a>
+                <a class="navbar-brand page-scroll" href="/"><img src="imgs/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,8 +20,11 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="{{isActivePath '/'}}"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="{{isActivePath '/jobs'}}"><a href="/jobs">Jobs<span class="sr-only">(current)</span></a></li>
+                    <li class="{{isActivePath '/orgs'}}"><a href="/orgs">Partner Organizations<span class="sr-only">(current)</span></a></li>
                     {{#if isInRole 'admin'}}
                     <li class="{{isActivePath '/post'}}"><a href="/post">Post a Job<span class="sr-only">(current)</span></a></li>
+                    <li class="{{isActivePath '/new_org'}}"><a href="/new_org">Add an Organization<span class="sr-only">(current)</span></a></li>
                     {{/if}}
                     {{> loginButtons align="right"}}
                 </ul>
@@ -37,7 +40,7 @@
           <div class="container">
             <h1>CROWDFUNDED<br>INTERNSHIPS</h1>
                 <p>Internships provide a way for youngsters to sprout their careers.<br>Help interns broaden their skillset and get paid for their work.</p>
-                <p><button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#donateModal">Fund an Internship</button> <a class="btn btn-success btn-lg" href="#" role="button">Apply for an Internship</a></p>
+                <p><button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#donateModal">Support an Intern</button> <a class="btn btn-success btn-lg" href="#" role="button">Apply for an Internship</a></p>
           </div>
         </div>
   </header>

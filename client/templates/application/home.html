@@ -1,71 +1,113 @@
 <template name="home">
-    <h3>Monthly Goal</h3>
-    <div id="monthly-goal" class="row">
-        <div class="col-sm-12">           
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="{{goal}}" aria-valuemin="0" aria-valuemax="100" style="width: {{goal}}%;">
-                    {{goal}}%
+
+   <section id="monthly-goal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Monthly Goal: $10,000</h2>
+                    <h3 class="section-subheading text-muted">Our goal is to raise $10,000 to provide paid internships to students.</h3>
                 </div>
-            </div>  
-        </div>
-    </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">           
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{goal}}" aria-valuemin="0" aria-valuemax="100" style="width: {{goal}}%;">
+                            {{goal}}%
+                        </div>
+                    </div>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <img class="img-responsive" src="http://placehold.it/400x400">
+                    <div class="text-center">
+                        {{#each donations}}
+                            <span class="label label-green">
+                                {{{donator_name this.donator}}} just donated ${{this.amount}}
+                            </span>&nbsp;
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="col-sm-6">
-            <h3>Step1</h3>
-            <p>Some body content here</p>
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Popular Career Paths</h2>
+                    <h3 class="section-subheading text-muted">We have helped interns find valuable positions, get paid, and learn amazing skills from companies worldwide.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-responsive" src="imgs/economics.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Economics</h4>
+                        <p class="text-muted">Financial Sector</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-responsive" src="imgs/technology.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Technology</h4>
+                        <p class="text-muted">Design, Development, Science</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-responsive" src="imgs/health.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Health</h4>
+                        <p class="text-muted">Wellness, Fitness, Training</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-responsive" src="imgs/service.jpg">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Service and Hospitality</h4>
+                        <p class="text-muted">Service industry, Conceirge, Management</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <h3>Step1</h3>
-            <p>Some body content here</p>
-        </div>
+    {{> about}}
 
-        <div class="col-sm-6">
-            <img class="img-responsive" src="http://placehold.it/400x400">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <img class="img-responsive" src="http://placehold.it/400x400">
-        </div>
-
-        <div class="col-sm-6">
-            <h3>Step1</h3>
-            <p>Some body content here</p>
-        </div>
-    </div>
-
-
-    <h3>Career Paths</h3>
-    <div id="career-paths" class="row">
-        <div class="col-xs-6 col-sm-3">
-            <img class="img-responsive" src="imgs/economics.jpg">
-        </div>
-        <div class="col-xs-6 col-sm-3">
-            <img class="img-responsive" src="imgs/technology.jpg">
-        </div>
-        <div class="col-xs-6 col-sm-3">
-            <img class="img-responsive" src="imgs/health.jpg">
-        </div>
-        <div class="col-xs-6 col-sm-3">
-            <img class="img-responsive" src="imgs/service.jpg">
-        </div>
-    </div>
-
-    <h3>Featured Student</h3>
-    <div id="featured" class="row">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
+    <section id="featured" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Featured Intern</h2>
+                    <h3 class="section-subheading text-muted">Carlos is 30% funded for his new internship this summer, help him reach his goal of becoming a software engineer!</h3>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-7">
                     <img class="img-responsive" src="imgs/intern1.jpg">
                 </div>
@@ -76,6 +118,7 @@
                       <li class="list-group-item"><b>Location:</b> Buenos Aires, Argentina</li>
                       <li class="list-group-item"><b>Company:</b> Computadora Numero Uno Ltd.</li>
                       <li class="list-group-item"><b>Start Date:</b> Sept. 19th 2015</li>
+                      <li class="list-group-item"><b>Backers:</b> <span class="badge">23</span></li>
                     </ul>
                     <p>Funded:</p>
                     <div class="progress">
@@ -83,20 +126,10 @@
                             30%
                         </div>
                     </div>
-                    <p>
-                        <a href="#">Backers <span class="badge">23</span></a>
-                    </p>
                     <button class="btn btn-success btn-block">Fund</button>
                 </div>
             </div>
-
-          </div>
         </div>
-    </div>
+    </section>
 
-    {{#each donations}}
-      <div class="col-md-4">
-        {{{donator_name this.donator}}} just donated ${{this.amount}}!
-      </div>
-    {{/each}}
 </template>

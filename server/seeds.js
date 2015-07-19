@@ -5,10 +5,16 @@
 // do with what you will. Be sure to place this
 // in your Meteor.startup or a Tracker.deps block
 if (Meteor.users.find().count() < 25) {
+    Accounts.createUser({
+        username: "admin",
+        password: "admin",
+        email: "admin@example.com"
+    });
+
     _.each(_.range(25), function() {
-        var randomEmail = faker.internet.email();
         var randomName = faker.name.findName();
-        var userName = faker.internet.userName();
+        var randomEmail = faker.internet.email(randomName);
+        var userName = faker.internet.userName(randomName).replace(/\./g, '').substring(0, 15);
         Accounts.createUser({
             username: userName,
             profile: {

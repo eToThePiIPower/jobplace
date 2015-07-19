@@ -46,14 +46,19 @@ if (Orgs.find().count() < 5) {
 }
 
 if (Jobs.find().count() < 10) {
+    var addresses = ['250 W 43rd St, New York, NY, 10036', '250 W 43rd St New York, NY, 10036', '345 W 35th St, New York, NY, 10001',
+        '70 Park Ave, New York, NY, 10016', '300 w 30th St, New York, NY, 10001', '4 W 31st St, New York, NY, 10001',
+        '355 W 16th St, New York, NY, 10011', '102 Charles St, New York, NY, 10014', '225 E 17th St, New York, NY, 10003',
+        '27 W 11th St, New York, NY, 10011'
+    ];
+    var titles = ['Web Developer', 'Graphic Designer', 'Fashion Designer',
+        'Hotel Manager'
+    ];
     _.each(_.range(10), function() {
-        var titles = ['Web Developer', 'Graphic Designer', 'Fashion Designer',
-            'Hotel Manager'
-        ];
         Jobs.insert({
-            title: 'Web Developer',
-            company: 'ArgInternet',
-            location: '1 Penn Plaza, New York, NY 10001',
+            title: titles[Math.floor(Math.random() * titles.length)],
+            company: faker.company.companyName(),
+            location: addresses[Math.floor(Math.random() * addresses.length)],
             path: 'Technology',
             start: new Date()
         });

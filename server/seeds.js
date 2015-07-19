@@ -26,3 +26,20 @@ if (Meteor.users.find().count() < 25) {
         });
     });
 }
+
+if (Orgs.find().count() < 5) {
+    _.each(_.range(5), function() {
+        var randomName = faker.company.companyName();
+        var randomBuzz = faker.company.bs();
+        var randomDescription = faker.lorem.paragraphs(3);
+        var randomLocation = faker.address.city();
+        var randomLogo = faker.image.abstract();
+        Orgs.insert({
+            name: randomName,
+            buzz: randomBuzz,
+            location: randomLocation,
+            description: randomDescription,
+            logo: randomLogo
+        });
+    });
+}

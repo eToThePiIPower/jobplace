@@ -1,0 +1,10 @@
+<template name="jobs">
+  <h3>Jobs</h3>
+  {{#each jobs}}
+  <div class="col-md-4">
+    <h4>{{title}}</h4>
+    <h5>{{company}}</h5>
+    <small>{{city}}, {{province}} {{country}}</small>
+  </div>
+  {{/each}}
+</template>

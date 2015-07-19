@@ -1,6 +1,6 @@
 ## Synopsis
 
-Sprout is a web application built on the Meteor framework for the AngelHack Open Source Hackathon held from July 18-19. The main goal was to improve Youth Unemployment by creating a platform for crowdfunding internships.
+Sprout is a web application built on the Meteor framework for the AngelHack Open Source Hackathon held July 18-19. The main goal was to improve Youth Unemployment by creating a platform for crowdfunding internships.
 
 ## Motivation
 
@@ -29,7 +29,7 @@ Clone repo and deploy using meteor
 
 ## Contributors
 
-Bryan, Charlie, David, Johnathon, Pan
+Bryan, Charlie, David, Johnathon
 
 ## License
 

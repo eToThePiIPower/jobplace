@@ -8,4 +8,10 @@
 
         <p>Donors can sign up to begin sponsoring students.</p>
     </div>
+
+    {{#each donations}}
+      <div class="col-md-4">
+        {{{donator_name this.donator}}} just donated ${{this.amount}}!
+      </div>
+    {{/each}}
 </template>
